@@ -12,6 +12,7 @@ RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
 RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.1" "platform-tools" "platforms;android-17" "ndk-bundle"
 
 RUN git clone https://aur-dev.archlinux.org/ncurses5-compat-libs.git
+RUN gpg --recv-keys C52048C0C0748FEE227D47A2702353E0F7E48EDB
 RUN cd ncurses5-compat-libs && makepkg && pacman --noconfirm -U ncurses5-compat-libs-6.1-1-x86_64.pkg.tar.xz
 RUN cd .. && rm -rf ncurses5-compat-libs
 
