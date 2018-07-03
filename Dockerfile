@@ -1,6 +1,6 @@
 FROM base/archlinux:2018.06.01
 SHELL ["/bin/bash", "-lc"]
-RUN pacman -Syu --noconfirm && pacman -S --noconfirm jdk8-openjdk wget git openssh tar gzip unzip ca-certificates base-devel gradle gcc clang cmake sfml python xorg xorg-server xorg-apps xorg-server-xvfb
+RUN pacman -Syu --noconfirm && pacman -S --noconfirm jdk8-openjdk wget git openssh tar gzip unzip ca-certificates base-devel gradle gcc clang cmake ninja sfml python xorg xorg-server xorg-apps xorg-server-xvfb
 
 RUN wget https://cmake.org/files/v3.7/cmake-3.7.2-Linux-x86_64.tar.gz && tar -xzf cmake-3.7.2-Linux-x86_64.tar.gz -C /var/opt && rm cmake-3.7.2-Linux-x86_64.tar.gz
 
