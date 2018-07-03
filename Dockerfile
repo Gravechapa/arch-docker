@@ -11,4 +11,8 @@ ENV ANDROID_NDK_HOME /var/opt/android-sdk-linux/ndk-bundle
 RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
 RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.1" "platform-tools" "platforms;android-17" "ndk-bundle"
 
+RUN git clone https://aur-dev.archlinux.org/ncurses5-compat-libs.git
+RUN cd ncurses5-compat-libs && makepkg && pacman --noconfirm -U ncurses5-compat-libs-6.1-1-x86_64.pkg.tar.xz
+RUN cd .. && rm -rf ncurses5-compat-libs
+
 RUN Xvfb :100 -screen 0 640x480x24 -fbdir /var/tmp& 
