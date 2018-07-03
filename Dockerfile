@@ -9,7 +9,7 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip &&
 ENV ANDROID_HOME /var/opt/android-sdk-linux
 ENV ANDROID_NDK_HOME /var/opt/android-sdk-linux/ndk-bundle
 RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
-RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.1" "platform-tools" "platforms;android-17" "ndk-bundle"
+RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;27.0.3" "platform-tools" "platforms;android-17" "ndk-bundle"
 
 RUN git clone https://aur-dev.archlinux.org/ncurses5-compat-libs.git
 RUN gpg --recv-keys C52048C0C0748FEE227D47A2702353E0F7E48EDB
