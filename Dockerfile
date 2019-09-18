@@ -10,7 +10,7 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip &&
 ENV ANDROID_HOME /var/opt/android-sdk-linux
 ENV ANDROID_NDK_HOME /var/opt/android-sdk-linux/ndk-bundle
 RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
-RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;27.0.3" "platform-tools" "platforms;android-17" "ndk-bundle"
+RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;29.0.2" "platform-tools" "platforms;android-29" "ndk-bundle"
 
 
 USER test
